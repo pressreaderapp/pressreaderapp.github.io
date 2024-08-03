@@ -3,76 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PressReader</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-            color: #8E44AD;
-        }
-        header p {
-            font-size: 1.2em;
-        }
-        .button {
-            background-color: #8E44AD;
-            color: #fff;
-            padding: 15px 30px;
-            text-align: center;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
-            margin-top: 20px;
-            text-decoration: none;
-        }
-        .button:hover {
-            background-color: #732d91;
-        }
-        footer {
-            margin-top: 50px;
-            text-align: center;
-        }
-        footer p {
-            margin: 5px 0;
-        }
-        footer a {
-            color: #8E44AD;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var userLang = navigator.language || navigator.userLanguage;
+            var redirectUrl = userLang.startsWith('tr') ? 'index_tr.html' : 'index_en.html';
+            window.location.href = redirectUrl;
+        });
+    </script>
 </head>
-<body>
-    <header>
-        <h1>Welcome to PressReader</h1>
-        <p>Your favorite way to read and follow the WordPress pages from various sources or the sources you would like to add.</p>
-        <a href="itms-apps://itunes.apple.com/app/id6544802387" class="button">Download the App</a>
-    </header>
-    <footer>
-        <p>&copy; PressReader 2024</p>
-        <p>
-            <a href="privacy.html">Privacy Policy</a>
-            |
-            <a href="terms.html">Terms and Conditions</a>
-        </p>
-    </footer>
-</body>
 </html>
