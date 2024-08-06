@@ -5,8 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            var userLang = navigator.language || navigator.userLanguage;
-            var redirectUrl = userLang.startsWith('tr') ? 'privacy_tr.html' : 'privacy_en.html';
+            // Get the current URL's query parameters
+            var urlParams = new URLSearchParams(window.location.search);
+            var langParam = urlParams.get('lang'); // Get the value of the 'lang' query parameter
+
+            // Redirect based on the 'lang' parameter or default to language detection
+            var redirectUrl;
+            if (langParam) {
+                // Redirect based on the query parameter
+                redirectUrl = langParam === 'tr' ? 'privacy_tr.html' : 'privacy_en.html';
+            } else {
+                // Default to language detection if no query parameter is present
+                var userLang = navigator.language || navigator.userLanguage;
+                redirectUrl = userLang.startsWith('tr') ? 'privacy_tr.html' : 'privacy_en.html';
+            }
+
+            // Perform the redirect
             window.location.href = redirectUrl;
         });
     </script>
