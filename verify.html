@@ -7,12 +7,8 @@
         document.addEventListener("DOMContentLoaded", function() {
             var queryParams = window.location.search;
             var urlParams = new URLSearchParams(queryParams);
-            var supabaseVerifyURL = urlParams.get('supabaseVerifyURL');
-            var token = urlParams.get('token');
-            var redirectTo = urlParams.get('redirect_to');
-            var type = urlParams.get('type');
-            var redirectUrl = supabaseVerifyURL + "?token=" + token + "&type=" + type + "&redirect_to=" + redirectTo;
-            window.location.href = redirectUrl;
+            var url = urlParams.get('url');
+            window.location.href = url;
         });
     </script>
 </head>
