@@ -8,7 +8,9 @@
             var queryParams = window.location.search;
             var urlParams = new URLSearchParams(queryParams);
             var url = urlParams.get('url');
-            window.location.href = url;
+            if (url) {
+                window.location.href = url;
+            }
         });
     </script>
 </head>
