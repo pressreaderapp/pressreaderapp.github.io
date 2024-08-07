@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var queryParams = window.location.search;
+            var urlParams = new URLSearchParams(queryParams);
+            var supabaseVerifyURL = urlParams.get('supabaseVerifyURL');
+            var token = urlParams.get('token');
+            var redirectTo = urlParams.get('redirect_to');
+            var type = urlParams.get('type');
+            var redirectUrl = supabaseVerifyURL + "?token=" + token + "&type=" + type + "&redirect_to=" + redirectTo;
+            window.location.href = redirectUrl;
+        });
+    </script>
+</head>
+</html>
