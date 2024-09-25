@@ -80,24 +80,24 @@
         "tr": "Vitrin"
     },
     "showcase_one_file_name": {
-        "en": "resources/en/showcase-1.png",
-        "tr": "resources/tr/showcase-1.png"
+        "en": "resources/en/showcase-1.jpg",
+        "tr": "resources/tr/showcase-1.jpg"
     },
     "showcase_two_file_name": {
-        "en": "resources/en/showcase-2.png",
-        "tr": "resources/tr/showcase-2.png"
+        "en": "resources/en/showcase-2.jpg",
+        "tr": "resources/tr/showcase-2.jpg"
     },
     "showcase_three_file_name": {
-        "en": "resources/en/showcase-3.png",
-        "tr": "resources/tr/showcase-3.png"
+        "en": "resources/en/showcase-3.jpg",
+        "tr": "resources/tr/showcase-3.jpg"
     },
     "showcase_four_file_name": {
-        "en": "resources/en/showcase-4.png",
-        "tr": "resources/tr/showcase-4.png"
+        "en": "resources/en/showcase-4.jpg",
+        "tr": "resources/tr/showcase-4.jpg"
     },
     "showcase_five_file_name": {
-        "en": "resources/en/showcase-5.png",
-        "tr": "resources/tr/showcase-5.png"
+        "en": "resources/en/showcase-5.jpg",
+        "tr": "resources/tr/showcase-5.jpg"
     },
     "footer": {
         "en": "© 2024 PressReader. All rights reserved.",
