@@ -105,21 +105,20 @@
     </footer>
     <script src="scripts/translations.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            changeContentBasedOnLanguage();
-        });
-        document.addEventListener('languageChanged', function() {
-            changeContentBasedOnLanguage();
-        });
-        function changeContentBasedOnLanguage() {
+        document.getElementById("privacyLink").addEventListener("click", function(event) {
+            event.preventDefault();
             var currentLang = window.getCurrentLanguage();
-            var privacyLink = document.getElementById('privacyLink');
-            privacyLink.href = currentLang === 'en' ? 'pages/privacy.html' : 'pages/privacy_' + currentLang + '.html';
-            var termsLink = document.getElementById('termsLink');
-            termsLink.href = currentLang === 'en' ? 'pages/terms.html' : 'pages/terms_' + currentLang + '.html';
-            var kvkkLink = document.getElementById('kvkkLink');
-            kvkkLink.href = currentLang === 'en' ? 'pages/kvkk.html' : 'pages/kvkk_' + currentLang + '.html';
-        }
-    </script>    
+            window.location.href = 'pages/privacy_' + currentLang + '.html';
+        });
+        document.getElementById("termsLink").addEventListener("click", function(event) {
+            event.preventDefault();
+            var currentLang = window.getCurrentLanguage();
+            window.location.href = 'pages/terms_' + currentLang + '.html';
+        });document.getElementById("kvkkLink").addEventListener("click", function(event) {
+            event.preventDefault();
+            var currentLang = window.getCurrentLanguage();
+            window.location.href = 'pages/kvkk_' + currentLang + '.html';
+        });
+    </script>
 </body>
 </html>
