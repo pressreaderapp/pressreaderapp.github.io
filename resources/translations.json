@@ -1,0 +1,122 @@
+{
+    "app_name": {
+        "en": "PressReader",
+        "tr": "PressReader"
+    },
+    "title": {
+        "en": "PressReader - Your Ultimate WordPress Reader",
+        "tr": "PressReader - En İyi WordPress Okuyucunuz"
+    },
+    "menu_features": {
+        "en": "Features",
+        "tr": "Özellikler"
+    },
+    "menu_showcase": {
+        "en": "Showcase",
+        "tr": "Vitrin"
+    },
+    "menu_download": {
+        "en": "Download",
+        "tr": "İndir"
+    },
+    "headline": {
+        "en": "Your Ultimate WordPress Reader",
+        "tr": "En İyi WordPress Okuyucunuz"
+    },
+    "subheadline": {
+        "en": "Follow, read, and enjoy all your favorite WordPress content in one beautifully designed app.",
+        "tr": "Tüm favori WordPress içeriklerini tek bir uygulamada takip et, oku ve keyfini çıkar."
+    },
+    "download_button_title": {
+        "en": "Download",
+        "tr": "İndir"
+    },
+    "features_title": {
+        "en": "Features",
+        "tr": "Özellikler"
+    },
+    "features_one_title": {
+        "en": "Follow Your Favorites",
+        "tr": "Favori Kaynaklarını Takip Et"
+    },
+    "features_one_description": {
+        "en": "Add and follow multiple WordPress sources, all in one place.",
+        "tr": "Birden fazla WordPress kaynağını ekle ve takip et, hepsi tek bir yerde."
+    },
+    "features_two_title": {
+        "en": "Search with Ease",
+        "tr": "Kolayca Aray"
+    },
+    "features_two_description": {
+        "en": "Quickly find posts from your selected source.",
+        "tr": "Seçtiğin herhangi bir kaynaktan gönderileri kolayca bul."
+    },
+    "features_three_title": {
+        "en": "Bookmarks for Later",
+        "tr": "Yer İşaretleri"
+    },
+    "features_three_description": {
+        "en": "Save posts to read whenever it's convenient.",
+        "tr": "Daha sonra okumak için gönderileri kaydedin."
+    },
+    "features_four_title": {
+        "en": "Light and Dark Mode",
+        "tr": "Açık ve Koyu Mod"
+    },
+    "features_four_description": {
+        "en": "Switch between light and dark themes based on your preference.",
+        "tr": "Tercihine göre açık ve koyu temalar arasında geçiş yap."
+    },
+    "features_five_title": {
+        "en": "Stay Organized",
+        "tr": "Organize Olun"
+    },
+    "features_five_description": {
+        "en": "Easily switch between your sources and keep your reading organized.",
+        "tr": "Kaynakların arasında kolayca geçiş yap ve okuma listeni düzenli tutun."
+    },
+    "showcase_title": {
+        "en": "Showcase",
+        "tr": "Vitrin"
+    },
+    "showcase_one_file_name": {
+        "en": "resources/en/showcase-1.png",
+        "tr": "resources/tr/showcase-1.png"
+    },
+    "showcase_two_file_name": {
+        "en": "resources/en/showcase-2.png",
+        "tr": "resources/tr/showcase-2.png"
+    },
+    "showcase_three_file_name": {
+        "en": "resources/en/showcase-3.png",
+        "tr": "resources/tr/showcase-3.png"
+    },
+    "showcase_four_file_name": {
+        "en": "resources/en/showcase-4.png",
+        "tr": "resources/tr/showcase-4.png"
+    },
+    "showcase_five_file_name": {
+        "en": "resources/en/showcase-5.png",
+        "tr": "resources/tr/showcase-5.png"
+    },
+    "footer": {
+        "en": "© 2024 PressReader. All rights reserved.",
+        "tr": "© 2024 PressReader. Tüm hakları saklıdır."
+    },
+    "privacy_policy_title": {
+        "en": "Privacy Policy",
+        "tr": "Gizlilik Politikası"
+    },
+    "terms_of_service_title": {
+        "en": "Terms of Service",
+        "tr": "Hizmet Şartları"
+    },
+    "kvkk_title": {
+        "en": "PDPL Information Notice",
+        "tr": "KVKK Bilgilendirme Metni"
+    },
+    "contact_title": {
+        "en": "Contact",
+        "tr": "İletişim"
+    }
+}

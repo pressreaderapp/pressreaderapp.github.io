@@ -3,26 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Get the current URL's query parameters
-            var urlParams = new URLSearchParams(window.location.search);
-            var langParam = urlParams.get('lang'); // Get the value of the 'lang' query parameter
-
-            // Redirect based on the 'lang' parameter or default to language detection
-            var redirectUrl;
-            if (langParam) {
-                // Redirect based on the query parameter
-                redirectUrl = langParam === 'tr' ? 'index_tr.html' : 'index_en.html';
-            } else {
-                // Default to language detection if no query parameter is present
-                var userLang = navigator.language || navigator.userLanguage;
-                redirectUrl = userLang.startsWith('tr') ? 'index_tr.html' : 'index_en.html';
-            }
-
-            // Perform the redirect
-            window.location.href = redirectUrl;
-        });
-    </script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" href="resources/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="resources/apple.png">
+    <meta name="msapplication-TileColor" content="#8e44ad">
+    <meta name="msapplication-TileImage" content="resources/ms.png">
+    <meta name="theme-color" content="#8e44ad">
+    <title data-translate="title">PressReader - Your Ultimate WordPress Reader</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo" data-translate="app_name">PressReader</div>
+                <ul class="nav-links">
+                    <li><a href="#features" data-translate="menu_features">Features</a></li>
+                    <li><a href="#showcase" data-translate="menu_showcase">Showcase</a></li>
+                    <li><a href="itms-apps://itunes.apple.com/app/id6544802387" data-translate="menu_download">Download</a></li>
+                    <li><a href="mailto:pressreader@ulassancak.com" data-translate="contact_title">Contact</a></li>
+                    <li class="language-switcher">
+                        <a href="#" class="language-option" data-lang="en">EN</a> |
+                        <a href="#" class="language-option" data-lang="tr">TR</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1 data-translate="headline">Your Ultimate WordPress Reader</h1>
+            <img src="resources/icon.svg" alt="PressReader Icon" width="100" height="100">
+            <p data-translate="subheadline">Follow, read, and enjoy all your favorite WordPress content in one beautifully designed app.</p>
+            <a href="itms-apps://itunes.apple.com/app/id6544802387" class="cta-button" data-translate="download_button_title">Download Now</a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 data-translate="features_title">Powerful Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3 data-translate="features_one_title">Multiple Sources</h3>
+                    <p data-translate="features_one_description">Add and follow various WordPress sources to curate your perfect reading list.</p>
+                </div>
+                <div class="feature-item">
+                    <h3 data-translate="features_two_title">Clean Interface</h3>
+                    <p data-translate="features_two_description">Enjoy a clutter-free, intuitive reading experience designed for focus.</p>
+                </div>
+                <div class="feature-item">
+                    <h3 data-translate="features_three_title">Offline Reading</h3>
+                    <p data-translate="features_three_description">Download articles to read later, even without an internet connection.</p>
+                </div>
+                <div class="feature-item">
+                    <h3 data-translate="features_four_title">Customization</h3>
+                    <p data-translate="features_four_description">Tailor the app to your preferences with customizable themes and settings.</p>
+                </div>
+                <div class="feature-item">
+                    <h3 data-translate="features_five_title">Customization</h3>
+                    <p data-translate="features_five_description">Tailor the app to your preferences with customizable themes and settings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="showcase" class="showcase">
+        <div class="container">
+            <h2 data-translate="showcase_title">App Showcase</h2>
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <img data-translate-src="showcase_one_file_name" alt="PressReader Home Screen">
+                </div>
+                <div class="showcase-item">
+                    <img data-translate-src="showcase_two_file_name" alt="PressReader Home Screen">
+                </div>
+                <div class="showcase-item">
+                    <img data-translate-src="showcase_three_file_name" alt="PressReader Home Screen">
+                </div>
+                <div class="showcase-item">
+                    <img data-translate-src="showcase_four_file_name" alt="PressReader Home Screen">
+                </div>
+                <div class="showcase-item">
+                    <img data-translate-src="showcase_five_file_name" alt="PressReader Home Screen">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p data-translate="footer">&copy; 2024 PressReader. All rights reserved.</p>
+            <div class="footer-links">
+                <a id="privacyLink" href="pages/privacy.html" data-translate="privacy_policy_title">Privacy Policy</a>
+                <a id="termsLink" href="pages/terms.html" data-translate="terms_of_service_title">Terms of Service</a>
+                <a id="kvkkLink" href="pages/kvkk.html" data-translate="kvkk_title">PDPL Information Notice</a>
+                <a href="mailto:pressreader@ulassancak.com" data-translate="contact_title">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/translations.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            changeContentBasedOnLanguage();
+        });
+        document.addEventListener('languageChanged', function() {
+            changeContentBasedOnLanguage();
+        });
+        function changeContentBasedOnLanguage() {
+            var currentLang = window.getCurrentLanguage();
+            var privacyLink = document.getElementById('privacyLink');
+            privacyLink.href = currentLang === 'en' ? 'pages/privacy.html' : 'pages/privacy_' + currentLang + '.html';
+            var termsLink = document.getElementById('termsLink');
+            termsLink.href = currentLang === 'en' ? 'pages/terms.html' : 'pages/terms_' + currentLang + '.html';
+            var kvkkLink = document.getElementById('kvkkLink');
+            kvkkLink.href = currentLang === 'en' ? 'pages/kvkk.html' : 'pages/kvkk_' + currentLang + '.html';
+        }
+    </script>    
+</body>
 </html>
