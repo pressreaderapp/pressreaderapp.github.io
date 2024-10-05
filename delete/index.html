@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="delete_account_title">Delete Your Account</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo" data-translate="app_name">PressReader</div>
+                <ul class="nav-links">
+                    <li><a href="/" data-translate="home">Home</a></li>
+                    <li class="language-switcher">
+                        <a href="#" class="language-option" data-lang="en">EN</a> |
+                        <a href="#" class="language-option" data-lang="tr">TR</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="delete-container">
+        <h1 data-translate="delete_account_title">Delete Your Account</h1>
+        <div class="delete-form">
+            <div class="warning" data-translate="delete_account_warning">
+                Warning: This action is irreversible. Once you delete your account, all your data will be permanently removed and cannot be recovered.
+            </div>
+            <form id="deleteAccountForm">
+                <div class="form-group">
+                    <label for="email" data-translate="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" data-translate="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="delete-cta-button" data-translate="delete_account_button_title">Delete My Account</button>
+            </form>
+            <div id="successMessage" class="success-message" data-translate="delete_account_success_description">
+                Your account has been successfully deleted. We're sorry to see you go. If you change your mind, you'll need to create a new account.
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmationDialog" class="confirmation-dialog">
+        <div class="confirmation-content">
+            <h2 data-translate="delete_account_onfirmation_title">Are you sure?</h2>
+            <p data-translate="delete_account_confirmation_description">This action cannot be undone. All your data will be permanently deleted.</p>
+            <div class="confirmation-buttons">
+                <button id="cancelDelete" class="neutral-button" data-translate="cancel">Cancel</button>
+                <button id="confirmDelete" class="delete-cta-button" data-translate="delete_account_confirmation_button">Yes, delete my account</button>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/translations.js" id="translationsScript"></script>
+    <script type="module">
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+        const supabaseUrl = 'https://jqklnpupfgyqnsvppbax.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impxa2xucHVwZmd5cW5zdnBwYmF4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjIyMDA1NDgsImV4cCI6MjAzNzc3NjU0OH0.yk8jOwrnApHqv08OR2vWMeZfsa_N1GwVVmyzjsilymM';
+        // const { createClient } = supabase;
+        const supabase = createClient(supabaseUrl, supabaseKey);
+
+        // Dummy API function for account deletion
+        async function deleteAccount(email, password) {
+            // Sign in the user
+            const { data, error } = await supabase.auth.signInWithPassword({
+                email: email,
+                password: password,
+            });
+
+            if (error) {
+                if (error.code == 'invalid_credentials') {
+                    throw new Error(translate(error.code));
+                } else {
+                    console.log(error);
+                    throw new Error(translate("unknown_error"));
+                }
+            }
+
+            // Call the Postgres function to delete the account
+            const { data: deleteData, error: deleteError } = await supabase.rpc('delete_account');
+
+            if (deleteError) throw deleteError;
+
+            // Sign out the user after successful deletion
+            await supabase.auth.signOut();
+
+            return { success: true };
+        }
+
+        const deleteAccountForm = document.getElementById('deleteAccountForm');
+        const confirmationDialog = document.getElementById('confirmationDialog');
+        const cancelDeleteBtn = document.getElementById('cancelDelete');
+        const confirmDeleteBtn = document.getElementById('confirmDelete');
+        const successMessage = document.getElementById('successMessage');
+
+        deleteAccountForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            confirmationDialog.style.display = 'block';
+        });
+
+        cancelDeleteBtn.addEventListener('click', function() {
+            confirmationDialog.style.display = 'none';
+        });
+
+        confirmDeleteBtn.addEventListener('click', async function() {
+            confirmationDialog.style.display = 'none';
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const submitButton = deleteAccountForm.querySelector('button[type="submit"]');
+
+            submitButton.disabled = true;
+            submitButton.textContent = translate("delete_account_button_deleting");
+
+            try {
+                const result = await deleteAccount(email, password);
+                if (result.success) {
+                    deleteAccountForm.style.display = 'none';
+                    successMessage.style.display = 'block';
+                }
+            } catch (error) {
+                let errorTitle = translate("error")
+                alert(errorTitle + ': ' + error.message);
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = translate("delete_account_button_title");
+            }
+        });
+    </script>
+</body>
+</html>

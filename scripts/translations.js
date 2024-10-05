@@ -1,4 +1,13 @@
-fetch('./resources/translations.json')
+// Get the script element
+const script = document.getElementById('translationsScript');
+
+// Get the base URL of the script
+const baseUrl = new URL(script.src).pathname.split('/').slice(0, -1).join('/');
+
+// Construct the URL for the translations file
+const translationsUrl = `${baseUrl}/../resources/translations.json`;
+
+fetch(translationsUrl)
   .then(response => response.json())
   .then(data => {
     window.translations = data;
@@ -56,4 +65,13 @@ function initializeLanguageSwitcher() {
 
   updateLanguage(getCurrentLanguage());
   updateActiveLanguage();
+}
+
+function translate(key) {
+  const lang = getCurrentLanguage();
+  if (translations[key] && translations[key][lang]) {
+    return translations[key][lang];
+  }
+  console.warn(`Translation not found for key: ${key} in language: ${lang}`);
+  return key; // Return the key itself if translation is not found
 }

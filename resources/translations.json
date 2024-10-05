@@ -3,6 +3,30 @@
         "en": "PressReader",
         "tr": "PressReader"
     },
+    "home": {
+        "en": "Home",
+        "tr": "Anasayfa"
+    },
+    "error": {
+        "en": "Error",
+        "tr": "Hata"
+    },
+    "cancel": {
+        "en": "Cancel",
+        "tr": "İptal"
+    },
+    "email": {
+        "en": "Email",
+        "tr": "E-posta"
+    },
+    "password": {
+        "en": "Password",
+        "tr": "Şifre"
+    },
+    "are_you_sure": {
+        "en": "Are you sure?",
+        "tr": "Emin misin?"
+    },
     "title": {
         "en": "PressReader - Your Ultimate WordPress Reader",
         "tr": "PressReader - En İyi WordPress Okuyucunuz"
@@ -118,5 +142,45 @@
     "contact_title": {
         "en": "Contact",
         "tr": "İletişim"
+    },
+    "delete_account_title": {
+        "en": "Delete Account",
+        "tr": "Hesabı Sil"
+    },
+    "delete_account_warning": {
+        "en": "Warning: This action is irreversible. Once you delete your account, all your data will be permanently removed and cannot be recovered.",
+        "tr": "Uyarı: Bu işlem geri alınamaz. Hesabınızı sildiğinde, tüm verilerin kalıcı olarak silinecek ve geri alınamayacak."
+    },
+    "delete_account_button_title": {
+        "en": "Delete My Account",
+        "tr": "Hesabımı Sil"
+    },
+    "delete_account_success_description": {
+        "en": "Your account has been successfully deleted. We're sorry to see you go. If you change your mind, you'll need to create a new account.",
+        "tr": "Hesabın başarıyla silindi. Gidişin bizi üzdü. Fikrini değiştirirsen, yeni bir hesap oluşturman gerekecek."
+    },
+    "delete_account_onfirmation_title": {
+        "en": "Are You Sure?",
+        "tr": "Emin Misin?"
+    },
+    "delete_account_confirmation_description": {
+        "en": "This action cannot be undone. All your data will be permanently deleted.",
+        "tr": "Bu işlem geri alınamaz. Tüm verilerin kalıcı olarak silinecek."
+    },
+    "delete_account_confirmation_button": {
+        "en": "Yes, delete my account",
+        "tr": "Evet, hesabımı sil"
+    },
+    "delete_account_button_deleting": {
+        "en": "Deleting...",
+        "tr": "Siliniyor..."
+    },
+    "invalid_credentials": {
+        "en": "Invalid email or password. Please try again.",
+        "tr": "Geçersiz e-posta veya şifre. Lütfen tekrar dene."
+    },
+    "unknown_error": {
+        "en": "An unknown error occurred. Please try again.",
+        "tr": "Bilinmeyen bir hata oluştu. Lütfen tekrar dene."
     }
 }
