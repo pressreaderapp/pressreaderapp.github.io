@@ -182,5 +182,13 @@
     "unknown_error": {
         "en": "An unknown error occurred. Please try again.",
         "tr": "Bilinmeyen bir hata oluştu. Lütfen tekrar dene."
+    },
+    "download_app_store_file_name": {
+        "en": "resources/en/appstore.svg",
+        "tr": "resources/tr/appstore.svg"
+    },
+    "download_google_play_file_name": {
+        "en": "resources/en/play.svg",
+        "tr": "resources/tr/play.svg"
     }
 }
